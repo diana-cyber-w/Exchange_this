@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Exchange this</string>
+    <string name="mobile_num_hint_text">Номер телефона</string>
+    <string name="password_hint_text">Пароль</string>
+    <string name="login_text_btn">Вход</string>
+    <string name="forget_password_text">Забыли пароль?</string>
+    <string name="sign_up_button_text">Регистрация</string>
+    <string name="email_hint_text">Email</string>
+    <string name="confirm_password_hint_text">Подтвердите пароль</string>
+    <string name="app_name_text">Exchange this!</string>
+    <string name="app_description_text">Приложение для обмена книгами</string>
+    <string name="search_menu_text">Поиск</string>
+    <string name="library_menu_text">Каталог</string>
+    <string name="favourite_menu_text">Избранное</string>
+    <string name="account_menu_text">Профиль</string>
+    <string name="account_name_text">Diana Vezhnovets</string>
+    <string name="account_nickname">diana_vezhnovets</string>
+    <string name="user_rating">5</string>
+    <string name="user_rating_text">Ваша оценка</string>
+    <string name="user_book_number">10</string>
+    <string name="user_book_number_text">Книг добавлено</string>
+    <string name="full_name_text">Полное имя</string>
+    <string name="update_text">Обновить</string>
+</resources>

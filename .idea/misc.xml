@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable-v24/book.xml" value="0.102" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1155" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/button_shape.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/edit_text_shape.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_baseline_library_books_24.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_google.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_international_logo_yandex_icon.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1155" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_microsoft.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_stay_at_home_reading_book.xml" value="0.1155" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_undraw_bibliophile_re_xarc.xml" value="0.102" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_undraw_book_reading_kx_9_s.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_undraw_books_l_33_t.xml" value="0.1155" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_undraw_bookshelves_re_lxoy.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_undraw_for_review_eqxk.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_undraw_reading_time_re_phf7.xml" value="0.1155" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/view_background.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/account_layout.xml" value="0.22957198443579765" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/favourite_books_layout.xml" value="0.24974358974358973" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/library_layout.xml" value="0.1824561403508772" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/login_item_layout.xml" value="0.2" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/login_layout.xml" value="0.16149068322981366" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/search_layout.xml" value="0.24974358974358973" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/second_activity_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/sign_up_item_layout.xml" value="0.2" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/welcome_layout.xml" value="0.19622641509433963" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/menu/menu.xml" value="0.24974358974358973" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>
