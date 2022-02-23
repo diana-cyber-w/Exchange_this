@@ -10,7 +10,7 @@ val dataModule = module {
         Room.databaseBuilder(
             get(),
             AppDatabase::class.java,
-            "users"
+            "usersAndBooks"
         ).build()
     }
 
@@ -19,6 +19,10 @@ val dataModule = module {
     }
 
     single {
-        DataRepositoryImpl(userDao = get())
+        get<AppDatabase>().getBookDao()
+    }
+
+    single {
+        DataRepositoryImpl(userDao = get(), bookDao = get())
     }
 }

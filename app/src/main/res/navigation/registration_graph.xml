@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/registration_graph"
+    app:startDestination="@id/welcomeFragment">
+    <fragment
+        android:id="@+id/registrationFragment"
+        android:name="com.example.exchangethis.presentation.fragments.RegistrationFragment"
+        android:label="RegistrationFragment"
+        tools:layout="@layout/login_layout">
+        <action
+            android:id="@+id/toMenu"
+            app:destination="@id/menuFragment"
+            app:enterAnim="@anim/slide_in_animation"
+            app:exitAnim="@anim/fade_out_animation" />
+        <action
+            android:id="@+id/toForgetPassword"
+            app:destination="@+id/forgetPasswordFragment"
+            app:enterAnim="@anim/slide_in_animation"
+            app:exitAnim="@anim/fade_out_animation" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.exchangethis.presentation.fragments.WelcomeFragment"
+        android:label="WelcomeFragment"
+        tools:layout="@layout/welcome_layout">
+        <action
+            android:id="@+id/toLogin"
+            app:destination="@+id/registrationFragment"
+            app:enterAnim="@anim/slide_in_animation"
+            app:exitAnim="@anim/fade_out_animation" />
+        <action
+            android:id="@+id/toMenuFromWelcome"
+            app:destination="@id/menuFragment"
+            app:enterAnim="@anim/slide_in_animation"
+            app:exitAnim="@anim/fade_out_animation" />
+    </fragment>
+    <fragment
+        android:id="@+id/addBookFragment"
+        android:name="com.example.exchangethis.presentation.fragments.AddBookFragment"
+        android:label="AddBookFragment"
+        tools:layout="@layout/add_book_layout">
+        <action
+            android:id="@+id/toMyBook"
+            app:destination="@+id/menuFragment"
+            app:enterAnim="@anim/slide_in_animation"
+            app:exitAnim="@anim/fade_out_animation" />
+    </fragment>
+    <fragment
+        android:id="@+id/myBookFragment"
+        android:name="com.example.exchangethis.presentation.fragments.MyBookFragment"
+        android:label="MyBookFragment"
+        tools:layout="@layout/my_book_layout" />
+    <fragment
+        android:id="@+id/libraryFragment"
+        android:name="com.example.exchangethis.presentation.fragments.LibraryFragment"
+        android:label="LibraryFragment"
+        tools:layout="@layout/library_layout" />
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.exchangethis.presentation.fragments.MenuFragment"
+        android:label="MenuFragment"
+        tools:layout="@layout/menu_layout">
+        <action
+            android:id="@+id/toAddBook"
+            app:destination="@+id/addBookFragment"
+            app:enterAnim="@anim/slide_in_animation"
+            app:exitAnim="@anim/fade_out_animation" />
+        <action
+            android:id="@+id/toDescription"
+            app:destination="@id/descriptionFragment"
+            app:enterAnim="@anim/slide_in_animation"
+            app:exitAnim="@anim/fade_out_animation" />
+        <action
+            android:id="@+id/toRegistration"
+            app:destination="@id/registrationFragment"
+            app:enterAnim="@anim/slide_in_animation"
+            app:exitAnim="@anim/fade_out_animation" />
+        <action
+            android:id="@+id/toCategory"
+            app:destination="@+id/bookByCategoryFragment"
+            app:enterAnim="@anim/slide_in_animation"
+            app:exitAnim="@anim/fade_out_animation" />
+    </fragment>
+    <fragment
+        android:id="@+id/descriptionFragment"
+        android:name="com.example.exchangethis.presentation.fragments.BookDescriptionFragment"
+        android:label="DescriptionFragment"
+        tools:layout="@layout/book_description_layout">
+        <action
+            android:id="@+id/toRating"
+            app:destination="@+id/ratingFragment"
+            app:enterAnim="@anim/slide_in_animation"
+            app:exitAnim="@anim/fade_out_animation" />
+        <action
+            android:id="@+id/toMenuFromDescription"
+            app:destination="@id/menuFragment"
+            app:enterAnim="@anim/slide_in_animation"
+            app:exitAnim="@anim/fade_out_animation" />
+    </fragment>
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.example.exchangethis.presentation.fragments.ForgetPasswordFragment"
+        android:label="ForgetPasswordFragment"
+        tools:layout="@layout/forget_password_layout">
+        <action
+            android:id="@+id/toMenuFromPassword"
+            app:destination="@id/menuFragment"
+            app:enterAnim="@anim/slide_in_animation"
+            app:exitAnim="@anim/fade_out_animation" />
+    </fragment>
+    <fragment
+        android:id="@+id/ratingFragment"
+        android:name="com.example.exchangethis.presentation.fragments.RatingFragment"
+        android:label="RatingFragment"
+        tools:layout="@layout/rating_layout">
+        <action
+            android:id="@+id/toMenuFromRating"
+            app:destination="@+id/menuFragment"
+            app:enterAnim="@anim/slide_in_animation"
+            app:exitAnim="@anim/fade_out_animation" />
+    </fragment>
+    <fragment
+        android:id="@+id/bookByCategoryFragment"
+        android:name="com.example.exchangethis.presentation.fragments.BookByCategoryFragment"
+        android:label="BookByCategoryLayout"
+        tools:layout="@layout/book_by_category_layout">
+        <action
+            android:id="@+id/toLibrary"
+            app:destination="@id/menuFragment"
+            app:enterAnim="@anim/slide_in_animation"
+            app:exitAnim="@anim/fade_out_animation" />
+    </fragment>
+</navigation>

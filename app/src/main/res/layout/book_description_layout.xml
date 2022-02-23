@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_270"
+            android:background="@color/background_white"
+            android:padding="@dimen/dimen_10">
+
+            <ImageButton
+                android:id="@+id/toMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_baseline_close_24" />
+
+            <ImageView
+                android:id="@+id/bookImage"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_centerVertical="true"
+                android:src="@drawable/ic_book_with_marker_svgrepo_com" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="@dimen/dimen_20">
+
+            <TextView
+                android:id="@+id/bookName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/dimen_10"
+                android:text="@string/book_name_text"
+                android:textColor="@color/text"
+                android:textSize="@dimen/dimen_28_sp" />
+
+            <TextView
+                android:id="@+id/bookYearAndAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/dimen_10"
+                android:text="@string/book_author_text"
+                android:textColor="@color/text"
+                android:textSize="@dimen/dimen_16_sp" />
+
+
+            <TextView
+                android:id="@+id/bookDescription"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:padding="@dimen/dimen_10"
+                android:text="@string/book_description_text"
+                android:textColor="@color/text"
+                android:textSize="@dimen/dimen_18_sp" />
+
+            <Button
+                android:id="@+id/ratingButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_10"
+                android:background="@drawable/button_rating_shape"
+                android:fontFamily="@font/antic"
+                android:text="@string/rating"
+                android:textColor="@color/text" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimen_10"
+                android:text="@string/publish_text"
+                android:textAllCaps="true"
+                android:textColor="@color/text"
+                android:textSize="@dimen/dimen_18_sp" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/publisherImage"
+                    android:layout_width="@dimen/dimen_100"
+                    android:layout_height="@dimen/dimen_100"
+                    android:src="@drawable/ic_baseline_account_circle_24" />
+
+                <TextView
+                    android:id="@+id/publisherName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10"
+                    android:layout_toEndOf="@id/publisherImage"
+                    android:text="@string/full_name_text"
+                    android:textColor="@color/text"
+                    android:textSize="@dimen/dimen_18_sp" />
+
+                <RatingBar
+                    android:id="@+id/publisherRating"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10"
+                    android:layout_marginTop="@dimen/dimen_30"
+                    android:layout_toEndOf="@id/publisherImage"
+                    android:theme="@style/RatingBar" />
+
+                <TextView
+                    android:id="@+id/publisherPhone"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_10"
+                    android:layout_marginTop="50dp"
+                    android:layout_toEndOf="@id/publisherImage"
+                    android:text="@string/mobile_num_hint_text"
+                    android:textColor="@color/text"
+                    android:textSize="@dimen/dimen_16_sp" />
+
+            </RelativeLayout>
+
+            <Button
+                android:id="@+id/callPublisher"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_10"
+                android:background="@drawable/button_shape"
+                android:backgroundTint="@color/button_color"
+                android:text="@string/borrow_book_text" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

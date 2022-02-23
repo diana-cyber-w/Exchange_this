@@ -15,23 +15,34 @@
             android:background="@color/background_white"
             android:padding="@dimen/dimen_20">
 
-            <ImageView
-                android:id="@+id/accountImage"
+            <ImageButton
+                android:id="@+id/logout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:background="@color/transparent"
+                android:src="@drawable/ic_baseline_logout_24" />
+
+            <ImageButton
+                android:id="@+id/img_profile"
                 android:layout_width="@dimen/dimen_100"
                 android:layout_height="@dimen/dimen_100"
                 android:layout_centerVertical="true"
-                android:src="@drawable/ic_undraw_female_avatar_w3jk" />
+                android:background="@color/transparent"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_baseline_account_circle_24" />
 
             <TextView
                 android:id="@+id/accountFullName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:layout_marginStart="@dimen/dimen_10"
-                android:layout_toEndOf="@id/accountImage"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_toEndOf="@id/img_profile"
                 android:fontFamily="@font/abril_fatface"
                 android:includeFontPadding="false"
                 android:text="@string/account_name_text"
+                android:textColor="@color/text"
                 android:textSize="@dimen/dimen_20_sp" />
 
             <TextView
@@ -39,10 +50,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/accountFullName"
-                android:layout_marginStart="@dimen/dimen_10"
-                android:layout_toEndOf="@id/accountImage"
+                android:layout_marginStart="@dimen/dimen_20"
+                android:layout_toEndOf="@id/img_profile"
+                android:fontFamily="@font/antic"
                 android:includeFontPadding="false"
                 android:text="di.vezhnovets@mail.ru"
+                android:textColor="@color/text"
                 android:textSize="@dimen/dimen_14_sp" />
 
         </RelativeLayout>
@@ -55,7 +68,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/dimen_0"
-                android:layout_height="@dimen/dimen_180"
+                android:layout_height="@dimen/dimen_220"
                 android:layout_margin="@dimen/dimen_10"
                 android:layout_weight="1"
                 app:cardBackgroundColor="@color/background_white"
@@ -78,7 +91,9 @@
                         android:layout_height="wrap_content"
                         android:layout_centerInParent="true"
                         android:includeFontPadding="false"
+                        android:maxLength="4"
                         android:text="@string/user_rating"
+                        android:textColor="@color/text"
                         android:textSize="@dimen/dimen_50_sp" />
 
                     <TextView
@@ -87,8 +102,11 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/userRating"
                         android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/antic"
                         android:includeFontPadding="false"
                         android:text="@string/user_rating_text"
+                        android:textAlignment="center"
+                        android:textColor="@color/text"
                         android:textSize="@dimen/dimen_20_sp" />
 
                 </RelativeLayout>
@@ -97,7 +115,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/dimen_0"
-                android:layout_height="@dimen/dimen_180"
+                android:layout_height="@dimen/dimen_220"
                 android:layout_margin="@dimen/dimen_10"
                 android:layout_weight="1"
                 app:cardBackgroundColor="@color/background_white"
@@ -121,6 +139,7 @@
                         android:layout_centerInParent="true"
                         android:includeFontPadding="false"
                         android:text="@string/user_book_number"
+                        android:textColor="@color/text"
                         android:textSize="50sp" />
 
                     <TextView
@@ -129,9 +148,11 @@
                         android:layout_height="wrap_content"
                         android:layout_below="@id/userBookNumber"
                         android:layout_centerHorizontal="true"
+                        android:fontFamily="@font/antic"
                         android:includeFontPadding="false"
                         android:text="@string/user_book_number_text"
                         android:textAlignment="center"
+                        android:textColor="@color/text"
                         android:textSize="@dimen/dimen_20_sp" />
 
                 </RelativeLayout>
@@ -160,7 +181,10 @@
                     android:background="@color/white"
                     android:drawableStart="@drawable/ic_baseline_person_24"
                     android:drawablePadding="@dimen/dimen_10"
-                    android:text="@string/account_name_text" />
+                    android:fontFamily="@font/antic"
+                    android:imeOptions="actionNext"
+                    android:text="@string/account_name_text"
+                    android:textColor="@color/text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -177,7 +201,11 @@
                     android:background="@color/white"
                     android:drawableStart="@drawable/ic_baseline_phone_24"
                     android:drawablePadding="@dimen/dimen_10"
-                    android:text="@string/account_name_text" />
+                    android:fontFamily="@font/antic"
+                    android:imeOptions="actionNext"
+                    android:inputType="phone"
+                    android:text="@string/account_name_text"
+                    android:textColor="@color/text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -192,9 +220,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
-                    android:drawableStart="@drawable/ic_baseline_person_pin_24"
+                    android:drawableStart="@drawable/ic_baseline_password_24"
                     android:drawablePadding="@dimen/dimen_10"
-                    android:text="@string/account_name_text" />
+                    android:fontFamily="@font/antic"
+                    android:imeOptions="actionDone"
+                    android:inputType="textPassword"
+                    android:text="@string/account_name_text"
+                    android:textColor="@color/text" />
 
             </com.google.android.material.textfield.TextInputLayout>
 
@@ -202,6 +234,7 @@
                 android:id="@+id/refactorButton"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:background="@drawable/button_shape"
                 android:backgroundTint="@color/button_color"
                 android:text="@string/update_text" />
 

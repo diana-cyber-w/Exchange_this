@@ -4,8 +4,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.exchangethis.domain.User
-import com.example.exchangethis.domain.UserInteractor
+import com.example.exchangethis.domain.interactors.UserInteractor
+import com.example.exchangethis.domain.models.User
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
@@ -16,9 +16,14 @@ class UserViewModel(
     val users: LiveData<List<User>> get() = _users
     private val _users = MutableLiveData<List<User>>()
 
-    val user: LiveData<List<User>>
-        get() = _user
+    val user: LiveData<List<User>> get() = _user
     private val _user = MutableLiveData<List<User>>()
+
+    val userByEmail: LiveData<List<User>> get() = _userByEmail
+    private val _userByEmail = MutableLiveData<List<User>>()
+
+    val myBookCounter: LiveData<Int> get() = _myBookCounter
+    private val _myBookCounter = MutableLiveData<Int>()
 
     fun getUsers() {
         viewModelScope.launch {
@@ -36,9 +41,30 @@ class UserViewModel(
         }
     }
 
+    fun getUserByEmail(email: String) {
+        viewModelScope.launch {
+            userInteractor.getUserByEmail(email).collect { users ->
+                _userByEmail.value = users
+            }
+        }
+    }
+
     fun insertUser(user: User) {
         viewModelScope.launch {
             userInteractor.insertUser(user)
         }
     }
+
+    fun updateUser(fullName: String, phone: String, password: String, email: String) {
+        viewModelScope.launch {
+            userInteractor.updateUser(fullName, phone, password, email)
+        }
+    }
+
+    fun setBookCounter(counter: Int) {
+        viewModelScope.launch {
+            _myBookCounter.value = counter
+        }
+    }
+
 }

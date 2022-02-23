@@ -11,4 +11,8 @@
     <color name="button_color">#4738CB</color>
     <color name="shape">#D3D3D3</color>
     <color name="text_color">#25294A</color>
+    <color name="grey">#A9A9A9</color>
+    <color name="transparent">#0000</color>
+    <color name="text">#434979</color>
+    <color name="category">#8C90AF</color>
 </resources>

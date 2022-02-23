@@ -5,9 +5,27 @@
       <map>
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable-v24/book.xml" value="0.102" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1155" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/book.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/button_rating_shape.xml" value="0.1185" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/button_shape.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/category_active.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/category_inactive.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/category_selector.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/checkbox_selector.xml" value="0.1" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/edit_text_shape.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1625" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1915" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_baseline_close_24.xml" value="0.1625" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_baseline_delete_24.xml" value="0.155" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_baseline_favorite_24.xml" value="0.1915" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_baseline_favorite_border_24.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_baseline_filter_list_24.xml" value="0.1" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_baseline_library_books_24.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_baseline_lock_24.xml" value="0.1915" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_baseline_logout_24.xml" value="0.1915" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.1625" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_book_with_marker_svgrepo_com.xml" value="0.1" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_google.xml" value="0.1" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_international_logo_yandex_icon.xml" value="0.1" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1155" />
@@ -17,20 +35,35 @@
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_undraw_book_reading_kx_9_s.xml" value="0.1" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_undraw_books_l_33_t.xml" value="0.1155" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_undraw_bookshelves_re_lxoy.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_undraw_female_avatar_w3jk.xml" value="0.1625" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_undraw_for_review_eqxk.xml" value="0.1" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_undraw_reading_time_re_phf7.xml" value="0.1155" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_undraw_road_to_knowledge_m8s0.xml" value="0.1" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/view_background.xml" value="0.1" />
-        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/account_layout.xml" value="0.22957198443579765" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/account_layout.xml" value="0.2" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/add_book_layout.xml" value="0.264" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/book_by_category_layout.xml" value="0.20863616930312098" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/book_description_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/book_item_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/category_item_layout.xml" value="0.264" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/favourite_books_layout.xml" value="0.24974358974358973" />
-        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/library_layout.xml" value="0.1824561403508772" />
-        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/login_item_layout.xml" value="0.2" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/forget_password_layout.xml" value="0.264" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/library_layout.xml" value="0.264" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/login_item_layout.xml" value="0.264" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/login_layout.xml" value="0.16149068322981366" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/menu_activity_layout.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/menu_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/my_book_item_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/my_book_layout.xml" value="0.2" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/rating_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/registration_activity_layout.xml" value="0.21532846715328466" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/search_layout.xml" value="0.24974358974358973" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/second_activity_layout.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/sign_up_item_layout.xml" value="0.2" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/welcome_layout.xml" value="0.19622641509433963" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/menu/menu.xml" value="0.24974358974358973" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/xml/file_paths.xml" value="0.1" />
       </map>
     </option>
   </component>

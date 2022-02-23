@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/dimen_170"
+    android:layout_height="@dimen/dimen_300"
+    android:layout_margin="@dimen/dimen_10"
+    app:cardCornerRadius="@dimen/dimen_2"
+    app:cardElevation="@dimen/dimen_10">
+
+    <LinearLayout
+        android:id="@+id/myBook"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="@dimen/dimen_10">
+
+        <ImageView
+            android:id="@+id/bookImage"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_150"
+            android:layout_marginTop="@dimen/dimen_40"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_book_with_marker_svgrepo_com" />
+
+        <TextView
+            android:id="@+id/bookName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:ellipsize="end"
+            android:fontFamily="@font/antic"
+            android:lines="2"
+            android:text="@string/book_name_text"
+            android:textAlignment="center"
+            android:textColor="@color/text"
+            android:textSize="@dimen/dimen_20_sp" />
+
+        <RatingBar
+            android:id="@+id/bookRating"
+            style="@style/Widget.AppCompat.RatingBar.Small"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/dimen_5"
+            android:theme="@style/RatingBar" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/deleteMyBook"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right"
+        android:background="@null"
+        android:contentDescription="@string/delete_my_book_button"
+        android:src="@drawable/ic_baseline_delete_24" />
+
+</androidx.cardview.widget.CardView>

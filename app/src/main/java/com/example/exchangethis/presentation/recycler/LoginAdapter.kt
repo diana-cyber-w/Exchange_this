@@ -1,21 +1,18 @@
 package com.example.exchangethis.presentation.recycler
 
-import android.content.Context
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import com.example.exchangethis.presentation.fragments.LoginFragment
 import com.example.exchangethis.presentation.fragments.SignUpFragment
-import com.example.exchangethis.utils.StringUtils
 
 class LoginAdapter(
     fragmentActivity: FragmentActivity,
-    private val totalTabs: Int,
-    context: Context
+    private val totalTabs: Int
 ) : FragmentStateAdapter(fragmentActivity) {
 
-    private val loginFragment by lazy { LoginFragment(context) }
-    private val signUpFragment by lazy { SignUpFragment(context) }
+    private val loginFragment by lazy { LoginFragment() }
+    private val signUpFragment by lazy { SignUpFragment() }
 
     override fun getItemCount() = totalTabs
 
@@ -23,8 +20,11 @@ class LoginAdapter(
         return when (position) {
             0 -> loginFragment
             1 -> signUpFragment
-            else -> throw IllegalStateException(StringUtils.UNKNOWN_POSITION_ERROR)
+            else -> throw IllegalStateException(UNKNOWN_POSITION_ERROR)
         }
     }
 
+    companion object {
+        private const val UNKNOWN_POSITION_ERROR = "Unknown position"
+    }
 }

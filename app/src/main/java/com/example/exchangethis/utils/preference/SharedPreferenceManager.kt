@@ -1,11 +1,19 @@
 package com.example.exchangethis.utils.preference
 
 interface SharedPreferenceManager {
-    fun savePassword(key: String, value: String)
+    fun saveString(key: String, value: String)
 
-    fun getPassword(key: String): String
+    fun getString(key: String): String
 
-    fun saveEmail(key: String, value: String)
+    fun saveBoolean(key: String, value: Boolean)
 
-    fun getEmail(key: String): String
+    fun getBoolean(key: String): Boolean
+
+    fun saveInt(key: String, value: Int)
+
+    fun getInt(key: String): Int
+
+    fun saveFloat(key: String, value: Float)
+
+    fun getFloat(key: String): Float
 }
