@@ -13,12 +13,16 @@
             android:id="@+id/toMenu"
             app:destination="@id/menuFragment"
             app:enterAnim="@anim/slide_in_animation"
-            app:exitAnim="@anim/fade_out_animation" />
+            app:exitAnim="@anim/fade_out_animation"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/toForgetPassword"
             app:destination="@+id/forgetPasswordFragment"
             app:enterAnim="@anim/slide_in_animation"
-            app:exitAnim="@anim/fade_out_animation" />
+            app:exitAnim="@anim/fade_out_animation"
+            app:popUpTo="@id/forgetPasswordFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
@@ -29,12 +33,16 @@
             android:id="@+id/toLogin"
             app:destination="@+id/registrationFragment"
             app:enterAnim="@anim/slide_in_animation"
-            app:exitAnim="@anim/fade_out_animation" />
+            app:exitAnim="@anim/fade_out_animation"
+            app:popUpTo="@id/registrationFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/toMenuFromWelcome"
             app:destination="@id/menuFragment"
             app:enterAnim="@anim/slide_in_animation"
-            app:exitAnim="@anim/fade_out_animation" />
+            app:exitAnim="@anim/fade_out_animation"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/addBookFragment"
@@ -45,7 +53,9 @@
             android:id="@+id/toMyBook"
             app:destination="@+id/menuFragment"
             app:enterAnim="@anim/slide_in_animation"
-            app:exitAnim="@anim/fade_out_animation" />
+            app:exitAnim="@anim/fade_out_animation"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/myBookFragment"
@@ -66,22 +76,50 @@
             android:id="@+id/toAddBook"
             app:destination="@+id/addBookFragment"
             app:enterAnim="@anim/slide_in_animation"
-            app:exitAnim="@anim/fade_out_animation" />
+            app:exitAnim="@anim/fade_out_animation"
+            app:popUpTo="@id/addBookFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/toDescription"
             app:destination="@id/descriptionFragment"
             app:enterAnim="@anim/slide_in_animation"
-            app:exitAnim="@anim/fade_out_animation" />
+            app:exitAnim="@anim/fade_out_animation"
+            app:popUpTo="@id/descriptionFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/toRegistration"
             app:destination="@id/registrationFragment"
             app:enterAnim="@anim/slide_in_animation"
-            app:exitAnim="@anim/fade_out_animation" />
+            app:exitAnim="@anim/fade_out_animation"
+            app:popUpTo="@id/registrationFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/toCategory"
             app:destination="@+id/bookByCategoryFragment"
             app:enterAnim="@anim/slide_in_animation"
-            app:exitAnim="@anim/fade_out_animation" />
+            app:exitAnim="@anim/fade_out_animation"
+            app:popUpTo="@id/bookByCategoryFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/toMyBookFromMenu"
+            app:destination="@id/myBookFragment"
+            app:popUpTo="@id/myBookFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/toLibraryFromMenu"
+            app:destination="@id/libraryFragment"
+            app:popUpTo="@id/libraryFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/toFavouriteFromMenu"
+            app:destination="@+id/favouriteFragment"
+            app:popUpTo="@id/favouriteFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/toAccountFromMenu"
+            app:destination="@+id/accountFragment"
+            app:popUpTo="@id/accountFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/descriptionFragment"
@@ -92,12 +130,16 @@
             android:id="@+id/toRating"
             app:destination="@+id/ratingFragment"
             app:enterAnim="@anim/slide_in_animation"
-            app:exitAnim="@anim/fade_out_animation" />
+            app:exitAnim="@anim/fade_out_animation"
+            app:popUpTo="@id/ratingFragment"
+            app:popUpToInclusive="true" />
         <action
             android:id="@+id/toMenuFromDescription"
             app:destination="@id/menuFragment"
             app:enterAnim="@anim/slide_in_animation"
-            app:exitAnim="@anim/fade_out_animation" />
+            app:exitAnim="@anim/fade_out_animation"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/forgetPasswordFragment"
@@ -108,7 +150,9 @@
             android:id="@+id/toMenuFromPassword"
             app:destination="@id/menuFragment"
             app:enterAnim="@anim/slide_in_animation"
-            app:exitAnim="@anim/fade_out_animation" />
+            app:exitAnim="@anim/fade_out_animation"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/ratingFragment"
@@ -119,7 +163,9 @@
             android:id="@+id/toMenuFromRating"
             app:destination="@+id/menuFragment"
             app:enterAnim="@anim/slide_in_animation"
-            app:exitAnim="@anim/fade_out_animation" />
+            app:exitAnim="@anim/fade_out_animation"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/bookByCategoryFragment"
@@ -130,6 +176,18 @@
             android:id="@+id/toLibrary"
             app:destination="@id/menuFragment"
             app:enterAnim="@anim/slide_in_animation"
-            app:exitAnim="@anim/fade_out_animation" />
+            app:exitAnim="@anim/fade_out_animation"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true" />
     </fragment>
+    <fragment
+        android:id="@+id/favouriteFragment"
+        android:name="com.example.exchangethis.presentation.fragments.FavouriteBooksFragment"
+        android:label="FavouriteFragment"
+        tools:layout="@layout/favourite_books_layout" />
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.example.exchangethis.presentation.fragments.AccountFragment"
+        android:label="AccountFragment"
+        tools:layout="@layout/account_layout" />
 </navigation>

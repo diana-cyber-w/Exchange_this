@@ -9,6 +9,8 @@ interface BookInteractor {
 
     fun getMyBooks(bookEmail: String): Flow<List<Book>>
 
+    suspend fun getMyBooksRating(bookEmail: String): List<Book>
+
     fun getFavouriteBooks(favourite: Boolean): Flow<List<Book>>
 
     suspend fun insertBook(book: Book)

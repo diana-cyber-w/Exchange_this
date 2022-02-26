@@ -1,15 +1,17 @@
 package com.example.exchangethis.data.repository
 
 import com.example.exchangethis.data.storage.book.BookDao
+import com.example.exchangethis.data.storage.book.BookEntity
 import com.example.exchangethis.data.storage.user.UserDao
+import com.example.exchangethis.data.storage.user.UserEntity
 import com.example.exchangethis.data.toBook
 import com.example.exchangethis.data.toBookEntity
-import com.example.exchangethis.data.toUser
 import com.example.exchangethis.data.toUserEntity
 import com.example.exchangethis.domain.models.Book
 import com.example.exchangethis.domain.models.User
 import com.example.exchangethis.domain.repository.DataRepository
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.withContext
@@ -19,30 +21,24 @@ class DataRepositoryImpl(
     private val bookDao: BookDao
 ) : DataRepository {
 
-    override fun getUsers(): Flow<List<User>> {
+    override fun getUsers(): Flow<List<UserEntity>> {
         return flow {
-            val users = userDao.getUsers().map { userEntity ->
-                userEntity.toUser()
-            }
-            emit(users)
+            emit(userDao.getUsers())
         }
     }
 
-    override fun getUserByEmailAndPassword(email: String, password: String): Flow<List<User>> {
+    override fun getUserByEmailAndPassword(
+        email: String,
+        password: String
+    ): Flow<List<UserEntity>> {
         return flow {
-            val user = userDao.getUserByEmailAmdPassword(email, password).map { userEntity ->
-                userEntity.toUser()
-            }
-            emit(user)
+            emit(userDao.getUserByEmailAmdPassword(email, password))
         }
     }
 
-    override fun getUserByEmail(email: String): Flow<List<User>> {
+    override fun getUserByEmail(email: String): Flow<List<UserEntity>> {
         return flow {
-            val user = userDao.getUserByEmail(email).map { userEntity ->
-                userEntity.toUser()
-            }
-            emit(user)
+            emit(userDao.getUserByEmail(email))
         }
     }
 
@@ -63,21 +59,25 @@ class DataRepositoryImpl(
         }
     }
 
-    override fun getAllBooks(): Flow<List<Book>> {
-        return flow {
-            val book = bookDao.getAllBooks().map { bookEntity ->
-                bookEntity.toBook()
-            }
-            emit(book)
+    override fun getAllBooks(): Flow<List<BookEntity>> = flow {
+        while (true) {
+            emit(bookDao.getAllBooks())
+            delay(DELAY_TIME)
         }
     }
 
-    override fun getMyBooks(bookEmail: String): Flow<List<Book>> {
-        return flow {
-            val book = bookDao.getMyBooks(bookEmail).map { bookEntity ->
+    override fun getMyBooks(bookEmail: String): Flow<List<BookEntity>> = flow {
+        while (true) {
+            emit(bookDao.getMyBooks(bookEmail))
+            delay(DELAY_TIME)
+        }
+    }
+
+    override suspend fun getMyBooksRating(bookEmail: String): List<Book> {
+        return withContext(Dispatchers.IO) {
+            bookDao.getMyBooks(bookEmail).map { bookEntity ->
                 bookEntity.toBook()
             }
-            emit(book)
         }
     }
 
@@ -105,30 +105,26 @@ class DataRepositoryImpl(
         }
     }
 
-    override fun getFavouriteBooks(favourite: Boolean): Flow<List<Book>> {
-        return flow {
-            val books = bookDao.getFavouriteBooks(favourite).map { bookEntity ->
-                bookEntity.toBook()
-            }
-            emit(books)
+    override fun getFavouriteBooks(favourite: Boolean): Flow<List<BookEntity>> = flow {
+        while (true) {
+            emit(bookDao.getFavouriteBooks(favourite))
+            delay(DELAY_TIME)
         }
     }
 
-    override fun getBookByTitle(title: String): Flow<List<Book>> {
-        return flow {
-            val books = bookDao.getBookByTitle(title).map { bookEntity ->
-                bookEntity.toBook()
-            }
-            emit(books)
+
+    override fun getBookByTitle(title: String): Flow<List<BookEntity>> = flow {
+        emit(bookDao.getBookByTitle(title))
+    }
+
+    override fun getBookByCategory(category: String): Flow<List<BookEntity>> = flow {
+        while (true) {
+            emit(bookDao.getBookByCategory(category))
+            delay(DELAY_TIME)
         }
     }
 
-    override fun getBookByCategory(category: String): Flow<List<Book>> {
-        return flow {
-            val books = bookDao.getBookByCategory(category).map { bookEntity ->
-                bookEntity.toBook()
-            }
-            emit(books)
-        }
+    companion object {
+        private const val DELAY_TIME = 1000L
     }
 }

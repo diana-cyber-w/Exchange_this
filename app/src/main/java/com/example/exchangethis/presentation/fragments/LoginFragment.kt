@@ -17,8 +17,8 @@ import org.koin.android.viewmodel.ext.android.sharedViewModel
 class LoginFragment : Fragment(R.layout.login_item_layout) {
 
     private val binding: LoginItemLayoutBinding by viewBinding(LoginItemLayoutBinding::bind)
-    private var loginEmail: String = resources.getString(R.string.STRING_DEFAULT_VALUE)
-    private var loginPassword: String = resources.getString(R.string.STRING_DEFAULT_VALUE)
+    private var loginEmail: String = ""
+    private var loginPassword: String = ""
     private val viewModel: UserViewModel by sharedViewModel()
     private val prefs by lazy { SharedPreferenceManagerImpl(requireContext()) }
 
@@ -41,9 +41,9 @@ class LoginFragment : Fragment(R.layout.login_item_layout) {
         loginPassword = binding.password.text.toString().trim()
 
         if (!Patterns.EMAIL_ADDRESS.matcher(loginEmail).matches()) {
-            binding.email.error = resources.getString(R.string.EMAIL_FORMAT_ERROR)
+            binding.email.error = context?.getString(R.string.EMAIL_FORMAT_ERROR)
         } else if (TextUtils.isEmpty(loginPassword)) {
-            binding.password.error = resources.getString(R.string.PASSWORD_EMPTY_ERROR)
+            binding.password.error = context?.getString(R.string.PASSWORD_EMPTY_ERROR)
         } else {
             prefs.saveString(resources.getString(R.string.EMAIL_KEY), loginEmail)
             prefs.saveString(resources.getString(R.string.PASSWORD_KEY), loginPassword)

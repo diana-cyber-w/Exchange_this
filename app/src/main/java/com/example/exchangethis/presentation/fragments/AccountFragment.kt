@@ -16,14 +16,15 @@ import com.example.exchangethis.utils.MyUtils
 import com.example.exchangethis.utils.preference.SharedPreferenceManagerImpl
 import kotlinx.coroutines.launch
 import org.koin.android.viewmodel.ext.android.sharedViewModel
+import org.koin.core.parameter.parametersOf
 
 class AccountFragment : Fragment(R.layout.account_layout) {
 
     private val binding: AccountLayoutBinding by viewBinding(AccountLayoutBinding::bind)
     private val viewModel: UserViewModel by sharedViewModel()
-    private val bookViewModel: MyBookViewModel by sharedViewModel()
     private val prefs by lazy { SharedPreferenceManagerImpl(requireContext()) }
     private var bookTotalRating: Double = 0.0
+    private val bookViewModel: MyBookViewModel by sharedViewModel()
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -32,6 +33,7 @@ class AccountFragment : Fragment(R.layout.account_layout) {
             prefs.getString(resources.getString(R.string.EMAIL_KEY)),
             prefs.getString(resources.getString(R.string.PASSWORD_KEY))
         )
+        bookViewModel.getMyBookRating(prefs.getString(resources.getString(R.string.EMAIL_KEY)))
         setAverageRating()
         fillUserData()
 
@@ -64,7 +66,6 @@ class AccountFragment : Fragment(R.layout.account_layout) {
                 binding.userBookNumber.text = counter.toString()
             }
         }
-        bookViewModel.countAverageBookRating(prefs.getFloat(resources.getString(R.string.RATING_KEY)))
         bookViewModel.averageBookRating.observe(viewLifecycleOwner) { rating ->
             viewLifecycleOwner.lifecycleScope.launch {
                 if (rating.toDouble().isNaN()) {
@@ -104,7 +105,7 @@ class AccountFragment : Fragment(R.layout.account_layout) {
     }
 
     private fun setAverageRating() {
-        bookViewModel.myBook.observe(viewLifecycleOwner) { books ->
+        bookViewModel.myBookRating.observe(viewLifecycleOwner) { books ->
             viewLifecycleOwner.lifecycleScope.launch {
                 books?.forEach { myBook ->
                     bookTotalRating += myBook.rating

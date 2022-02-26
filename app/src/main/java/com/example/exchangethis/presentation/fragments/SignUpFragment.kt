@@ -18,10 +18,10 @@ import org.koin.android.viewmodel.ext.android.sharedViewModel
 class SignUpFragment : Fragment(R.layout.sign_up_item_layout) {
 
     private val binding: SignUpItemLayoutBinding by viewBinding(SignUpItemLayoutBinding::bind)
-    private var fullName: String = resources.getString(R.string.EMPTY)
-    private var email: String = resources.getString(R.string.EMPTY)
-    private var phone: String = resources.getString(R.string.EMPTY)
-    private var password: String = resources.getString(R.string.EMPTY)
+    private var fullName: String = ""
+    private var email: String = ""
+    private var phone: String = ""
+    private var password: String = ""
     private val newUser by lazy { User(fullName, email, phone, password) }
     private val viewModel: UserViewModel by sharedViewModel()
     private val prefs by lazy { SharedPreferenceManagerImpl(requireContext()) }

@@ -16,8 +16,11 @@ class FavouriteBookViewModel(
     val books: LiveData<List<Book>> get() = _books
     private val _books = MutableLiveData<List<Book>>()
 
+    init {
+        getFavouriteBooks(true)
+    }
 
-    fun getFavouriteBooks(favourite: Boolean) {
+    private fun getFavouriteBooks(favourite: Boolean) {
         viewModelScope.launch {
             bookInteractor.getFavouriteBooks(favourite).collect { books ->
                 _books.value = books

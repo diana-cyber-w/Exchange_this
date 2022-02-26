@@ -18,16 +18,20 @@ import org.koin.android.viewmodel.ext.android.sharedViewModel
 
 class MyBookFragment : Fragment(R.layout.my_book_layout) {
 
-    private val viewModel: MyBookViewModel by sharedViewModel()
     private val binding: MyBookLayoutBinding by viewBinding(MyBookLayoutBinding::bind)
     private val adapter by lazy { MyBookAdapter(myBookListener) }
     private val prefs by lazy { SharedPreferenceManagerImpl(requireContext()) }
+    private val viewModel: MyBookViewModel by sharedViewModel()
 
     private val myBookListener: OnBookClickListener = object : OnBookClickListener {
         override fun onIconClickListener(position: Int) {
             viewModel.deleteBook(
                 prefs.getString(resources.getString(R.string.EMAIL_KEY)),
                 viewModel.myBook.value?.get(position)?.bookName.orEmpty()
+            )
+            prefs.saveInt(
+                resources.getString(R.string.COUNTER_KEY),
+                prefs.getInt(resources.getString(R.string.COUNTER_KEY)) - 1
             )
         }
 
@@ -40,7 +44,6 @@ class MyBookFragment : Fragment(R.layout.my_book_layout) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        viewModel.getMyBooks(prefs.getString(resources.getString(R.string.EMAIL_KEY)))
         initRecycler()
         initObserves()
         gridLayout()

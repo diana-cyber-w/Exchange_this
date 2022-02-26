@@ -18,8 +18,8 @@ class ForgetPasswordFragment : Fragment(R.layout.forget_password_layout) {
     private val binding: ForgetPasswordLayoutBinding by viewBinding(ForgetPasswordLayoutBinding::bind)
     private val viewModel: UserViewModel by sharedViewModel()
     private val prefs by lazy { SharedPreferenceManagerImpl(requireContext()) }
-    private var email: String = resources.getString(R.string.STRING_DEFAULT_VALUE)
-    private var password: String = resources.getString(R.string.STRING_DEFAULT_VALUE)
+    private var email: String = ""
+    private var password: String = ""
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)

@@ -15,19 +15,20 @@ import com.example.exchangethis.presentation.viewModels.MyBookViewModel
 import com.example.exchangethis.utils.preference.SharedPreferenceManagerImpl
 import kotlinx.coroutines.launch
 import org.koin.android.viewmodel.ext.android.sharedViewModel
+import org.koin.core.parameter.parametersOf
 
 class BookDescriptionFragment : Fragment(R.layout.book_description_layout) {
 
     private val binding: BookDescriptionLayoutBinding by viewBinding(BookDescriptionLayoutBinding::bind)
     private val libraryViewModel: LibraryViewModel by sharedViewModel()
-    private val bookViewModel: MyBookViewModel by sharedViewModel()
     private val prefs by lazy { SharedPreferenceManagerImpl(requireContext()) }
-    private var bookName: String = resources.getString(R.string.STRING_DEFAULT_VALUE)
-    private var bookYearAndAuthor: String = resources.getString(R.string.STRING_DEFAULT_VALUE)
-    private var bookDescription: String = resources.getString(R.string.STRING_DEFAULT_VALUE)
-    private var bookEmail: String = resources.getString(R.string.STRING_DEFAULT_VALUE)
-    private var publisherName: String = resources.getString(R.string.STRING_DEFAULT_VALUE)
-    private var publisherPhone: String = resources.getString(R.string.STRING_DEFAULT_VALUE)
+    private val bookViewModel: MyBookViewModel by sharedViewModel()
+    private var bookName: String = ""
+    private var bookYearAndAuthor: String = ""
+    private var bookDescription: String = ""
+    private var bookEmail: String = ""
+    private var publisherName: String = ""
+    private var publisherPhone: String = ""
     private var bookTotalRating: Double = 0.0
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -38,7 +39,6 @@ class BookDescriptionFragment : Fragment(R.layout.book_description_layout) {
 
         binding.ratingButton.setOnClickListener {
             findNavController().navigate(R.id.toRating)
-
         }
 
         binding.toMenu.setOnClickListener {
@@ -68,9 +68,9 @@ class BookDescriptionFragment : Fragment(R.layout.book_description_layout) {
         binding.publisherName.text = publisherName
         binding.publisherPhone.text = publisherPhone
 
+        bookViewModel.getMyBookRating(prefs.getString(resources.getString(R.string.EMAIL_KEY)))
         setAverageRating()
 
-        bookViewModel.countAverageBookRating(prefs.getFloat(resources.getString(R.string.RATING_KEY)))
         bookViewModel.averageBookRating.observe(viewLifecycleOwner) { rating ->
             viewLifecycleOwner.lifecycleScope.launch {
                 binding.publisherRating.rating = rating
@@ -79,7 +79,7 @@ class BookDescriptionFragment : Fragment(R.layout.book_description_layout) {
     }
 
     private fun setAverageRating() {
-        bookViewModel.myBook.observe(viewLifecycleOwner) { books ->
+        bookViewModel.myBookRating.observe(viewLifecycleOwner) { books ->
             viewLifecycleOwner.lifecycleScope.launch {
                 books?.forEach { myBook ->
                     bookTotalRating += myBook.rating

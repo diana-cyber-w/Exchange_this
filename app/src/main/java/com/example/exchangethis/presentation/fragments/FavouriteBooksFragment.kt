@@ -43,7 +43,6 @@ class FavouriteBooksFragment : Fragment(R.layout.favourite_books_layout) {
         super.onViewCreated(view, savedInstanceState)
         initRecycler()
         initObserves()
-        viewModel.getFavouriteBooks(true)
         gridLayout()
     }
 

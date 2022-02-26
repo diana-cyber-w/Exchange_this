@@ -2,6 +2,7 @@ package com.example.exchangethis.presentation.fragments
 
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -24,14 +25,14 @@ class AddBookFragment : Fragment(R.layout.add_book_layout) {
     private val viewModel: LibraryViewModel by viewModel()
     private val userViewModel: UserViewModel by sharedViewModel()
     private val prefs by lazy { SharedPreferenceManagerImpl(requireContext()) }
-    private var bookName: String = resources.getString(R.string.STRING_DEFAULT_VALUE)
-    private var bookAuthor: String = resources.getString(R.string.STRING_DEFAULT_VALUE)
-    private var bookYear: String = resources.getString(R.string.STRING_DEFAULT_VALUE)
-    private var bookEmail: String = resources.getString(R.string.STRING_DEFAULT_VALUE)
-    private var bookDescription: String = resources.getString(R.string.STRING_DEFAULT_VALUE)
+    private var bookName: String = ""
+    private var bookAuthor: String = ""
+    private var bookYear: String = ""
+    private var bookEmail: String = ""
+    private var bookDescription: String = ""
     private var rating: Double = 0.0
     private val favourite: Boolean = false
-    private var bookCategory: String = resources.getString(R.string.STRING_DEFAULT_VALUE)
+    private var bookCategory: String = ""
     private val newBook by lazy {
         Book(
             bookEmail,
@@ -89,6 +90,7 @@ class AddBookFragment : Fragment(R.layout.add_book_layout) {
                 prefs.getInt(resources.getString(R.string.COUNTER_KEY)) + 1
             )
             viewModel.insertBook(newBook)
+            Log.e("INSERT", newBook.toString())
             userViewModel.setBookCounter(prefs.getInt(resources.getString(R.string.COUNTER_KEY)))
             findNavController().navigate(R.id.toMyBook)
         }
