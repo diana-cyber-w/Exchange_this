@@ -97,15 +97,15 @@ class AddBookFragment : Fragment(R.layout.add_book_layout) {
         } else {
             binding.progressBar.visibility = View.VISIBLE
             binding.addBookButton.visibility = View.INVISIBLE
-            Thread(Runnable {
+            Thread {
                 while (bookImage == "") {
-                    Handler(Looper.getMainLooper()).post(Runnable {
+                    Handler(Looper.getMainLooper()).post {
                         viewModel.image.observe(viewLifecycleOwner) { imageUrl ->
                             viewLifecycleOwner.lifecycleScope.launch {
                                 bookImage = imageUrl
                             }
                         }
-                    })
+                    }
                     try {
                         Thread.sleep(100)
                     } catch (e: InterruptedException) {
@@ -119,12 +119,12 @@ class AddBookFragment : Fragment(R.layout.add_book_layout) {
                         )
                         viewModel.insertBook(newBook)
                         userViewModel.setBookCounter(prefs.getInt(resources.getString(R.string.COUNTER_KEY)))
-                        Handler(Looper.getMainLooper()).post(Runnable {
+                        Handler(Looper.getMainLooper()).post {
                             findNavController().navigate(R.id.toMyBook)
-                        })
+                        }
                     }
                 }
-            }).start()
+            }.start()
         }
     }
 
