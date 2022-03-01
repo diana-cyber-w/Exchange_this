@@ -5,6 +5,8 @@ import kotlinx.coroutines.flow.Flow
 
 interface BookInteractor {
 
+    suspend fun getBookImage(title: String): String
+
     fun getAllBooks(): Flow<List<Book>>
 
     fun getMyBooks(bookEmail: String): Flow<List<Book>>

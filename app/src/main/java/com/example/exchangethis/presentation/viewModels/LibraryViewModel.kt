@@ -1,6 +1,7 @@
 package com.example.exchangethis.presentation.viewModels
 
 import android.content.Context
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -27,6 +28,9 @@ class LibraryViewModel(
 
     val bookByCategory: LiveData<List<Book>> get() = _bookByCategory
     private val _bookByCategory = MutableLiveData<List<Book>>()
+
+    val image: LiveData<String> get() = _image
+    private val _image = MutableLiveData<String>()
 
     init {
         getAllBooks()
@@ -72,6 +76,13 @@ class LibraryViewModel(
             bookInteractor.getBookByCategory(category).collect { books ->
                 _bookByCategory.value = books
             }
+        }
+    }
+
+    fun getImage(title: String) {
+        Log.e("IMAGE", _image.value.toString())
+        viewModelScope.launch {
+            _image.value = bookInteractor.getBookImage(title)
         }
     }
 }

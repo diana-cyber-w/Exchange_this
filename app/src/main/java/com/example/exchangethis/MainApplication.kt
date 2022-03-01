@@ -3,6 +3,7 @@ package com.example.exchangethis
 import android.app.Application
 import com.example.exchangethis.data.di.dataModule
 import com.example.exchangethis.domain.di.domainModule
+import com.example.exchangethis.network.di.networkModule
 import com.example.exchangethis.presentation.di.presentationModule
 import com.example.exchangethis.utils.di.utilsModule
 import org.koin.android.ext.koin.androidContext
@@ -22,7 +23,8 @@ class MainApplication : Application() {
                 dataModule,
                 domainModule,
                 presentationModule,
-                utilsModule
+                utilsModule,
+                networkModule
             )
         }
     }

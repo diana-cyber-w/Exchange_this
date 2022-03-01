@@ -8,5 +8,6 @@ data class Book(
     var description: String,
     var rating: Double,
     var favourite: Boolean,
-    var bookCategory: String
+    var bookCategory: String,
+    var bookImage: String
 )

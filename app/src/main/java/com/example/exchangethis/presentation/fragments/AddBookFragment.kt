@@ -1,8 +1,9 @@
 package com.example.exchangethis.presentation.fragments
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.text.TextUtils
-import android.util.Log
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
@@ -33,6 +34,7 @@ class AddBookFragment : Fragment(R.layout.add_book_layout) {
     private var rating: Double = 0.0
     private val favourite: Boolean = false
     private var bookCategory: String = ""
+    private var bookImage: String = ""
     private val newBook by lazy {
         Book(
             bookEmail,
@@ -42,7 +44,8 @@ class AddBookFragment : Fragment(R.layout.add_book_layout) {
             bookDescription,
             rating,
             favourite,
-            bookCategory
+            bookCategory,
+            bookImage
         )
     }
 
@@ -65,6 +68,7 @@ class AddBookFragment : Fragment(R.layout.add_book_layout) {
         bookDescription = binding.myBookDescription.text.toString().trim()
 
         userViewModel.getUserByEmail(bookEmail)
+        viewModel.getImage(bookName)
 
         userViewModel.userByEmail.observe(viewLifecycleOwner) { publisher ->
             viewLifecycleOwner.lifecycleScope.launch {
@@ -73,6 +77,12 @@ class AddBookFragment : Fragment(R.layout.add_book_layout) {
                     publisher[0].fullName
                 )
                 prefs.saveString(resources.getString(R.string.PUBLISHER_PHONE), publisher[0].phone)
+            }
+        }
+
+        viewModel.image.observe(viewLifecycleOwner) { imageUrl ->
+            viewLifecycleOwner.lifecycleScope.launch {
+                bookImage = imageUrl
             }
         }
 
@@ -85,14 +95,36 @@ class AddBookFragment : Fragment(R.layout.add_book_layout) {
         } else if (TextUtils.isEmpty(bookDescription)) {
             binding.myBookDescription.error = resources.getString(R.string.DESCRIPTION_EMPTY_ERROR)
         } else {
-            prefs.saveInt(
-                resources.getString(R.string.COUNTER_KEY),
-                prefs.getInt(resources.getString(R.string.COUNTER_KEY)) + 1
-            )
-            viewModel.insertBook(newBook)
-            Log.e("INSERT", newBook.toString())
-            userViewModel.setBookCounter(prefs.getInt(resources.getString(R.string.COUNTER_KEY)))
-            findNavController().navigate(R.id.toMyBook)
+            binding.progressBar.visibility = View.VISIBLE
+            binding.addBookButton.visibility = View.INVISIBLE
+            Thread(Runnable {
+                while (bookImage == "") {
+                    Handler(Looper.getMainLooper()).post(Runnable {
+                        viewModel.image.observe(viewLifecycleOwner) { imageUrl ->
+                            viewLifecycleOwner.lifecycleScope.launch {
+                                bookImage = imageUrl
+                            }
+                        }
+                    })
+                    try {
+                        Thread.sleep(100)
+                    } catch (e: InterruptedException) {
+                        e.printStackTrace()
+                    }
+                    if (bookImage != "") {
+                        binding.progressBar.visibility = View.INVISIBLE
+                        prefs.saveInt(
+                            resources.getString(R.string.COUNTER_KEY),
+                            prefs.getInt(resources.getString(R.string.COUNTER_KEY)) + 1
+                        )
+                        viewModel.insertBook(newBook)
+                        userViewModel.setBookCounter(prefs.getInt(resources.getString(R.string.COUNTER_KEY)))
+                        Handler(Looper.getMainLooper()).post(Runnable {
+                            findNavController().navigate(R.id.toMyBook)
+                        })
+                    }
+                }
+            }).start()
         }
     }
 

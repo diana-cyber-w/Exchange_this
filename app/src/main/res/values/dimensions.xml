@@ -28,6 +28,7 @@
     <dimen name="dimen_170">170dp</dimen>
     <dimen name="dimen_180">180dp</dimen>
     <dimen name="dimen_220">220dp</dimen>
+    <dimen name="dimen_240">240dp</dimen>
     <dimen name="dimen_270">270dp</dimen>
     <dimen name="dimen_280">280dp</dimen>
     <dimen name="dimen_300">300dp</dimen>

@@ -8,6 +8,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
+import com.bumptech.glide.Glide
+import com.bumptech.glide.request.target.Target
 import com.example.exchangethis.R
 import com.example.exchangethis.databinding.BookDescriptionLayoutBinding
 import com.example.exchangethis.presentation.viewModels.LibraryViewModel
@@ -15,7 +17,6 @@ import com.example.exchangethis.presentation.viewModels.MyBookViewModel
 import com.example.exchangethis.utils.preference.SharedPreferenceManagerImpl
 import kotlinx.coroutines.launch
 import org.koin.android.viewmodel.ext.android.sharedViewModel
-import org.koin.core.parameter.parametersOf
 
 class BookDescriptionFragment : Fragment(R.layout.book_description_layout) {
 
@@ -60,6 +61,13 @@ class BookDescriptionFragment : Fragment(R.layout.book_description_layout) {
             binding.bookName.text = bookName
             binding.bookDescription.text = bookDescription
             binding.bookYearAndAuthor.text = bookYearAndAuthor
+
+            Glide.with(requireContext())
+                .load(book[0].bookImage)
+                .override(Target.SIZE_ORIGINAL, Target.SIZE_ORIGINAL)
+                .centerCrop()
+                .error(R.drawable.ic_book_with_marker_svgrepo_com)
+                .into(binding.bookImage)
         }
 
         publisherName = prefs.getString(resources.getString(R.string.PUBLISHER_NAME))

@@ -12,6 +12,7 @@
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/category_inactive.xml" value="0.1" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/category_selector.xml" value="0.1" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/checkbox_selector.xml" value="0.1" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/custom_circular_bar.xml" value="0.1" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/edit_text_shape.xml" value="0.1" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_baseline_account_circle_24.xml" value="0.1625" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/ic_baseline_add_24.xml" value="0.1915" />
@@ -42,9 +43,9 @@
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/drawable/view_background.xml" value="0.1" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/account_layout.xml" value="0.2" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/activity_main.xml" value="0.1" />
-        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/add_book_layout.xml" value="0.264" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/add_book_layout.xml" value="0.19925857275254866" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/book_by_category_layout.xml" value="0.20863616930312098" />
-        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/book_description_layout.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/book_description_layout.xml" value="0.22988505747126436" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/book_item_layout.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/category_item_layout.xml" value="0.264" />
         <entry key="..\:/Users/Hp/AndroidStudioProjects/Exchangethis/app/src/main/res/layout/favourite_books_layout.xml" value="0.24974358974358973" />

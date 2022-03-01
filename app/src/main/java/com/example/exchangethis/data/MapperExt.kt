@@ -30,7 +30,8 @@ fun BookEntity.toBook() =
         description = description,
         rating = rating,
         favourite = isFavourite,
-        bookCategory = bookCategory
+        bookCategory = bookCategory,
+        bookImage = bookImage
     )
 
 fun Book.toBookEntity() =
@@ -42,5 +43,6 @@ fun Book.toBookEntity() =
         description = description,
         rating = rating,
         isFavourite = favourite,
-        bookCategory = bookCategory
+        bookCategory = bookCategory,
+        bookImage = bookImage
     )

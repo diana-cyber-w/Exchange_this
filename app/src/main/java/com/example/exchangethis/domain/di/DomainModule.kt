@@ -12,6 +12,6 @@ val domainModule = module {
     }
 
     single<BookInteractor> {
-        BookInteractorImpl(dataRepositoryImpl = get())
+        BookInteractorImpl(dataRepositoryImpl = get(), networkRepositoryImpl = get())
     }
 }

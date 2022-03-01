@@ -68,7 +68,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/dimen_0"
-                android:layout_height="@dimen/dimen_220"
+                android:layout_height="@dimen/dimen_240"
                 android:layout_margin="@dimen/dimen_10"
                 android:layout_weight="1"
                 app:cardBackgroundColor="@color/background_white"
@@ -115,7 +115,7 @@
 
             <com.google.android.material.card.MaterialCardView
                 android:layout_width="@dimen/dimen_0"
-                android:layout_height="@dimen/dimen_220"
+                android:layout_height="@dimen/dimen_240"
                 android:layout_margin="@dimen/dimen_10"
                 android:layout_weight="1"
                 app:cardBackgroundColor="@color/background_white"

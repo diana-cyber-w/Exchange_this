@@ -28,7 +28,10 @@ class BookEntity(
     val isFavourite: Boolean,
 
     @ColumnInfo(name = "bookCategory")
-    val bookCategory: String
+    val bookCategory: String,
+
+    @ColumnInfo(name = "bookImage")
+    val bookImage: String
 ) {
     @PrimaryKey(autoGenerate = true)
     var id = 0

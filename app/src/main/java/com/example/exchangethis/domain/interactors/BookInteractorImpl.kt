@@ -3,6 +3,7 @@ package com.example.exchangethis.domain.interactors
 import com.example.exchangethis.data.repository.DataRepositoryImpl
 import com.example.exchangethis.data.toBook
 import com.example.exchangethis.domain.models.Book
+import com.example.exchangethis.network.repository.NetworkRepositoryImpl
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flowOn
@@ -10,8 +11,15 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.withContext
 
 class BookInteractorImpl(
-    private val dataRepositoryImpl: DataRepositoryImpl
+    private val dataRepositoryImpl: DataRepositoryImpl,
+    private val networkRepositoryImpl: NetworkRepositoryImpl
 ) : BookInteractor {
+
+    override suspend fun getBookImage(title: String): String {
+        return withContext(Dispatchers.IO) {
+            networkRepositoryImpl.getBookImage(title)
+        }
+    }
 
     override fun getAllBooks(): Flow<List<Book>> =
         dataRepositoryImpl.getAllBooks().map { bookEntityList ->
