@@ -44,6 +44,7 @@ class AccountFragment : Fragment(R.layout.account_layout) {
                 resources.getString(R.string.EMAIL_KEY),
                 resources.getString(R.string.STRING_DEFAULT_VALUE)
             )
+            viewModel.setBookCounter(0)
             val intent = requireActivity().intent
             requireActivity().finish()
             startActivity(intent)
@@ -60,7 +61,15 @@ class AccountFragment : Fragment(R.layout.account_layout) {
                 binding.passwordRefactor.setText(users[0].password)
             }
         }
-        viewModel.setBookCounter(prefs.getInt(resources.getString(R.string.COUNTER_KEY)))
+        viewModel.setBookCounter(
+            prefs.getInt(
+                (resources.getString(R.string.COUNTER_KEY) + prefs.getString(
+                    resources.getString(
+                        R.string.EMAIL_KEY
+                    )
+                ))
+            )
+        )
         viewModel.myBookCounter.observe(viewLifecycleOwner) { counter ->
             viewLifecycleOwner.lifecycleScope.launch {
                 binding.userBookNumber.text = counter.toString()

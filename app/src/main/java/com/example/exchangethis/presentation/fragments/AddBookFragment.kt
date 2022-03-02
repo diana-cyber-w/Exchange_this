@@ -114,11 +114,29 @@ class AddBookFragment : Fragment(R.layout.add_book_layout) {
                     if (bookImage != "") {
                         binding.progressBar.visibility = View.INVISIBLE
                         prefs.saveInt(
-                            resources.getString(R.string.COUNTER_KEY),
-                            prefs.getInt(resources.getString(R.string.COUNTER_KEY)) + 1
+                            (resources.getString(R.string.COUNTER_KEY) + prefs.getString(
+                                resources.getString(
+                                    R.string.EMAIL_KEY
+                                )
+                            )),
+                            prefs.getInt(
+                                (resources.getString(R.string.COUNTER_KEY) + prefs.getString(
+                                    resources.getString(
+                                        R.string.EMAIL_KEY
+                                    )
+                                ))
+                            ) + 1
                         )
                         viewModel.insertBook(newBook)
-                        userViewModel.setBookCounter(prefs.getInt(resources.getString(R.string.COUNTER_KEY)))
+                        userViewModel.setBookCounter(
+                            prefs.getInt(
+                                (resources.getString(R.string.COUNTER_KEY) + prefs.getString(
+                                    resources.getString(
+                                        R.string.EMAIL_KEY
+                                    )
+                                ))
+                            )
+                        )
                         Handler(Looper.getMainLooper()).post {
                             findNavController().navigate(R.id.toMyBook)
                         }
