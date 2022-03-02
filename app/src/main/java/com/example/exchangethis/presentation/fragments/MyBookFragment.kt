@@ -31,7 +31,13 @@ class MyBookFragment : Fragment(R.layout.my_book_layout) {
             )
             prefs.saveInt(
                 resources.getString(R.string.COUNTER_KEY),
-                prefs.getInt(resources.getString(R.string.COUNTER_KEY)) - 1
+                prefs.getInt(
+                    resources.getString(R.string.COUNTER_KEY) + prefs.getString(
+                        resources.getString(
+                            R.string.EMAIL_KEY
+                        )
+                    )
+                ) - 1
             )
         }
 

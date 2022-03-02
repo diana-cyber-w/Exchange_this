@@ -122,7 +122,13 @@ class AccountFragment : Fragment(R.layout.account_layout) {
             }
             prefs.saveFloat(
                 resources.getString(R.string.RATING_KEY),
-                (bookTotalRating / prefs.getInt(resources.getString(R.string.COUNTER_KEY))).toFloat()
+                ((bookTotalRating / prefs.getInt(
+                    resources.getString(R.string.COUNTER_KEY) + prefs.getString(
+                        resources.getString(
+                            R.string.EMAIL_KEY
+                        )
+                    )
+                ))).toFloat()
             )
             bookViewModel.countAverageBookRating(prefs.getFloat(resources.getString(R.string.RATING_KEY)))
         }
