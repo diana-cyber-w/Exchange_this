@@ -30,7 +30,11 @@ class MyBookFragment : Fragment(R.layout.my_book_layout) {
                 viewModel.myBook.value?.get(position)?.bookName.orEmpty()
             )
             prefs.saveInt(
-                resources.getString(R.string.COUNTER_KEY),
+                resources.getString(R.string.COUNTER_KEY) + prefs.getString(
+                    resources.getString(
+                        R.string.EMAIL_KEY
+                    )
+                ),
                 prefs.getInt(
                     resources.getString(R.string.COUNTER_KEY) + prefs.getString(
                         resources.getString(
