@@ -35,7 +35,7 @@ class BookByCategoryFragment : Fragment(R.layout.book_by_category_layout) {
 
         override fun onItemClickListener(book: Book) {
             prefs.saveString(resources.getString(R.string.TITLE), book.bookName)
-            findNavController().navigate(R.id.toDescription)
+            findNavController().navigate(R.id.toDescriptionFromCategory)
         }
     }
 
@@ -44,7 +44,7 @@ class BookByCategoryFragment : Fragment(R.layout.book_by_category_layout) {
         initRecycler()
         initObserves()
         gridLayout()
-//        viewModel.getBookByCategory(prefs.getString(resources.getString(R.string.CATEGORY_KEY)))
+        viewModel.getBookByCategory(prefs.getString(resources.getString(R.string.CATEGORY_KEY)))
 
         binding.toMenu.setOnClickListener {
             findNavController().navigate(R.id.toLibrary)

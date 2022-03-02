@@ -5,7 +5,6 @@ import android.text.TextUtils
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
-import androidx.navigation.fragment.findNavController
 import by.kirich1409.viewbindingdelegate.viewBinding
 import com.example.exchangethis.R
 import com.example.exchangethis.databinding.AccountLayoutBinding
@@ -16,7 +15,6 @@ import com.example.exchangethis.utils.MyUtils
 import com.example.exchangethis.utils.preference.SharedPreferenceManagerImpl
 import kotlinx.coroutines.launch
 import org.koin.android.viewmodel.ext.android.sharedViewModel
-import org.koin.core.parameter.parametersOf
 
 class AccountFragment : Fragment(R.layout.account_layout) {
 
@@ -42,11 +40,13 @@ class AccountFragment : Fragment(R.layout.account_layout) {
         }
 
         binding.logout.setOnClickListener {
-            findNavController().navigate(R.id.toRegistration)
             prefs.saveString(
                 resources.getString(R.string.EMAIL_KEY),
                 resources.getString(R.string.STRING_DEFAULT_VALUE)
             )
+            val intent = requireActivity().intent
+            requireActivity().finish()
+            startActivity(intent)
         }
     }
 

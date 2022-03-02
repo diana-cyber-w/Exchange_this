@@ -118,10 +118,7 @@ class DataRepositoryImpl(
     }
 
     override fun getBookByCategory(category: String): Flow<List<BookEntity>> = flow {
-        while (true) {
-            emit(bookDao.getBookByCategory(category))
-            delay(DELAY_TIME)
-        }
+        emit(bookDao.getBookByCategory(category))
     }
 
     companion object {

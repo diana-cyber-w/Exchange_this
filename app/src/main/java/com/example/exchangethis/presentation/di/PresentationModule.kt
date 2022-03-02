@@ -14,7 +14,7 @@ val presentationModule = module {
     }
 
     viewModel {
-        LibraryViewModel(bookInteractor = get(), get())
+        LibraryViewModel(bookInteractor = get())
     }
 
     viewModel {

@@ -1,24 +1,17 @@
 package com.example.exchangethis.presentation.viewModels
 
-import android.content.Context
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.exchangethis.R
 import com.example.exchangethis.domain.interactors.BookInteractor
 import com.example.exchangethis.domain.models.Book
-import com.example.exchangethis.utils.preference.SharedPreferenceManagerImpl
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 
 class LibraryViewModel(
-    private val bookInteractor: BookInteractor,
-    context: Context
+    private val bookInteractor: BookInteractor
 ) : ViewModel() {
-
-    private val prefs by lazy { SharedPreferenceManagerImpl(context) }
 
     val books: LiveData<List<Book>> get() = _books
     private val _books = MutableLiveData<List<Book>>()
@@ -34,7 +27,6 @@ class LibraryViewModel(
 
     init {
         getAllBooks()
-        getBookByCategory(prefs.getString(context.getString(R.string.CATEGORY_KEY)))
     }
 
     private fun getAllBooks() {
@@ -71,7 +63,7 @@ class LibraryViewModel(
         }
     }
 
-    private fun getBookByCategory(category: String) {
+    fun getBookByCategory(category: String) {
         viewModelScope.launch {
             bookInteractor.getBookByCategory(category).collect { books ->
                 _bookByCategory.value = books
@@ -80,7 +72,6 @@ class LibraryViewModel(
     }
 
     fun getImage(title: String) {
-        Log.e("IMAGE", _image.value.toString())
         viewModelScope.launch {
             _image.value = bookInteractor.getBookImage(title)
         }
