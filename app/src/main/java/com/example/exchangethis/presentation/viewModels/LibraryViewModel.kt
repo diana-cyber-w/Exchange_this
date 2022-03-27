@@ -6,8 +6,11 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.exchangethis.domain.interactors.BookInteractor
 import com.example.exchangethis.domain.models.Book
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 class LibraryViewModel(
     private val bookInteractor: BookInteractor
@@ -73,7 +76,13 @@ class LibraryViewModel(
 
     fun getImage(title: String) {
         viewModelScope.launch {
-            _image.value = bookInteractor.getBookImage(title)
+            val result = withContext(Dispatchers.Default) {
+                val part = async {
+                    return@async bookInteractor.getBookImage(title)
+                }
+                return@withContext part.await()
+            }
+            _image.value = result
         }
     }
 }

@@ -1,8 +1,6 @@
 package com.example.exchangethis.presentation.fragments
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.text.TextUtils
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -68,7 +66,6 @@ class AddBookFragment : Fragment(R.layout.add_book_layout) {
         bookDescription = binding.myBookDescription.text.toString().trim()
 
         userViewModel.getUserByEmail(bookEmail)
-        viewModel.getImage(bookName)
 
         userViewModel.userByEmail.observe(viewLifecycleOwner) { publisher ->
             viewLifecycleOwner.lifecycleScope.launch {
@@ -97,52 +94,39 @@ class AddBookFragment : Fragment(R.layout.add_book_layout) {
         } else {
             binding.progressBar.visibility = View.VISIBLE
             binding.addBookButton.visibility = View.INVISIBLE
-            Thread {
-                while (bookImage == "") {
-                    Handler(Looper.getMainLooper()).post {
-                        viewModel.image.observe(viewLifecycleOwner) { imageUrl ->
-                            viewLifecycleOwner.lifecycleScope.launch {
-                                bookImage = imageUrl
-                            }
-                        }
-                    }
-                    try {
-                        Thread.sleep(100)
-                    } catch (e: InterruptedException) {
-                        e.printStackTrace()
-                    }
-                    if (bookImage != "") {
-                        binding.progressBar.visibility = View.INVISIBLE
-                        prefs.saveInt(
-                            (resources.getString(R.string.COUNTER_KEY) + prefs.getString(
-                                resources.getString(
-                                    R.string.EMAIL_KEY
-                                )
-                            )),
-                            prefs.getInt(
-                                (resources.getString(R.string.COUNTER_KEY) + prefs.getString(
-                                    resources.getString(
-                                        R.string.EMAIL_KEY
-                                    )
-                                ))
-                            ) + 1
+            viewModel.getImage(bookName)
+            initImageObserve()
+        }
+    }
+
+    private fun initImageObserve() {
+        viewModel.image.observe(viewLifecycleOwner) { imageUrl ->
+            bookImage = imageUrl
+            prefs.saveInt(
+                (resources.getString(R.string.COUNTER_KEY) + prefs.getString(
+                    resources.getString(
+                        R.string.EMAIL_KEY
+                    )
+                )),
+                prefs.getInt(
+                    (resources.getString(R.string.COUNTER_KEY) + prefs.getString(
+                        resources.getString(
+                            R.string.EMAIL_KEY
                         )
-                        viewModel.insertBook(newBook)
-                        userViewModel.setBookCounter(
-                            prefs.getInt(
-                                (resources.getString(R.string.COUNTER_KEY) + prefs.getString(
-                                    resources.getString(
-                                        R.string.EMAIL_KEY
-                                    )
-                                ))
-                            )
+                    ))
+                ) + 1
+            )
+            viewModel.insertBook(newBook)
+            userViewModel.setBookCounter(
+                prefs.getInt(
+                    (resources.getString(R.string.COUNTER_KEY) + prefs.getString(
+                        resources.getString(
+                            R.string.EMAIL_KEY
                         )
-                        Handler(Looper.getMainLooper()).post {
-                            findNavController().navigate(R.id.toMyBook)
-                        }
-                    }
-                }
-            }.start()
+                    ))
+                )
+            )
+            findNavController().navigate(R.id.toMyBook)
         }
     }
 
